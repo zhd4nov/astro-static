@@ -1,0 +1,23 @@
+---
+import "../styles/global.css";
+
+import { InfrastructureCheck } from "../components/InfrastructureCheck";
+import { formatSiteTitle, siteIdentity } from "../lib/site";
+
+const pageTitle = formatSiteTitle(siteIdentity);
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <main>
+      <h1>{siteIdentity.name}</h1>
+      <InfrastructureCheck identity={siteIdentity} />
+    </main>
+  </body>
+</html>

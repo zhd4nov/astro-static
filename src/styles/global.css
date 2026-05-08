@@ -1,0 +1,67 @@
+/* Mobile-first default styles apply below --viewport-xs.
+   Device examples are orientation points, not targeting rules:
+   xs 480px: large phones such as iPhone 15 Pro Max, Pixel 8 Pro.
+   sm 640px: small tablets and large phones in landscape.
+   md 768px: tablets such as iPad mini and iPad portrait.
+   lg 1024px: tablets in landscape and small laptops.
+   xl 1280px: common laptop screens such as 13-inch MacBook Air.
+   2xl 1536px: wide laptop and desktop screens. */
+@custom-media --viewport-xs (width >= 30rem);
+@custom-media --viewport-sm (width >= 40rem);
+@custom-media --viewport-md (width >= 48rem);
+@custom-media --viewport-lg (width >= 64rem);
+@custom-media --viewport-xl (width >= 80rem);
+@custom-media --viewport-2xl (width >= 96rem);
+
+:root {
+  --color-background: #fff;
+  --color-text: #171717;
+  --font-body:
+    system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", sans-serif;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --content-width: 64rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  background: var(--color-background);
+  text-rendering: optimizelegibility;
+}
+
+main {
+  width: min(
+    calc(100% - var(--space-4) - var(--space-4)),
+    var(--content-width)
+  );
+  margin-inline: auto;
+  padding-block: var(--space-6);
+
+  & h1 {
+    margin-block: 0 var(--space-3);
+  }
+
+  & p {
+    margin-block: 0;
+  }
+
+  @media (--viewport-md) {
+    padding-block: var(--space-8);
+  }
+}

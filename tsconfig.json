@@ -1,0 +1,17 @@
+{
+  "extends": "astro/tsconfigs/strictest",
+  "compilerOptions": {
+    "exactOptionalPropertyTypes": true,
+    "noImplicitAny": true,
+    "noUncheckedIndexedAccess": true,
+    "strict": true,
+    "strictNullChecks": true
+  },
+  "include": [
+    ".astro/types.d.ts",
+    "src/**/*",
+    "astro.config.ts",
+    "eslint.config.js",
+    "vitest.config.ts"
+  ]
+}
